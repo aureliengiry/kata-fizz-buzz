@@ -18,8 +18,15 @@ class FizzBuzzEngineTest extends TestCase
     /**
      * @test
      */
-    public function oneReturnOne(){
+    public function oneReturnsOne(){
         $this->assertSame(1, $this->fizzBuzzEngine->run(1));
+    }
+
+    /**
+     * @test
+     */
+    public function twoReturnsTwo(){
+        $this->assertSame(2, $this->fizzBuzzEngine->run(2));
     }
 }
 
