@@ -32,8 +32,28 @@ class FizzBuzzEngineTest extends TestCase
     /**
      * @test
      */
-    public function threeReturnsFizz(){
-        $this->assertSame('Fizz', $this->fizzBuzzEngine->run(3));
+    public function fourReturnsFour(){
+        $this->assertSame(4, $this->fizzBuzzEngine->run(4));
+    }
+
+    /**
+     * @test
+     */
+    public function fiveReturnsBuzz(){
+        $this->assertSame('Buzz', $this->fizzBuzzEngine->run(5));
+    }
+
+    /**
+     * @test
+     * @dataProvider provideNumberDivisibleBy3
+     */
+    public function numberDivisibleBy3ReturnsFizz(int $number){
+        $this->assertSame('Fizz', $this->fizzBuzzEngine->run($number));
+    }
+
+    public function provideNumberDivisibleBy3(){
+        yield [3];
+        yield [6];
     }
 }
 

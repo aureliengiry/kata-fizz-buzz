@@ -5,12 +5,17 @@ namespace Kata;
 
 class FizzBuzzEngine
 {
-    public function run(int $value)
+    public function run(int $number)
     {
-        if(3 === $value){
+        if ($this->isFizz($number)) {
             return 'Fizz';
+        } elseif (5 === $number) {
+            return 'Buzz';
         }
-        
-        return $value;
+        return $number;
+    }
+
+    private function isFizz(int $number){
+        return $number % 3 === 0;
     }
 }
