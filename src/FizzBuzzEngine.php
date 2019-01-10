@@ -9,13 +9,19 @@ class FizzBuzzEngine
     {
         if ($this->isFizz($number)) {
             return 'Fizz';
-        } elseif (5 === $number) {
+        } elseif ($this->isBuzz($number)) {
             return 'Buzz';
         }
         return $number;
     }
 
-    private function isFizz(int $number){
+    private function isFizz(int $number): bool
+    {
         return $number % 3 === 0;
+    }
+
+    private function isBuzz(int $number): bool
+    {
+        return $number % 5 === 0;
     }
 }
