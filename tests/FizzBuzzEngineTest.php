@@ -28,6 +28,13 @@ class FizzBuzzEngineTest extends TestCase
     public function twoReturnsTwo(){
         $this->assertSame(2, $this->fizzBuzzEngine->run(2));
     }
+
+    /**
+     * @test
+     */
+    public function threeReturnsFizz(){
+        $this->assertSame('Fizz', $this->fizzBuzzEngine->run(3));
+    }
 }
 
 
